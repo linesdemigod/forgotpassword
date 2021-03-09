@@ -8,7 +8,7 @@ if(isset($_POST['reset-request-submit'])) {
     $token = random_bytes(32);
 
     //the url of the web we will 
-    $url = "www.alliedremittance.com/create-new-password.php?selector=". $selector . "&validator=" . bin2hex($token);
+    $url = "www.allied.com/create-new-password.php?selector=". $selector . "&validator=" . bin2hex($token);
 
     $expires = date("U") + 1800;
     
@@ -61,8 +61,8 @@ if(isset($_POST['reset-request-submit'])) {
     $message .= '<p>Here is your password reset link: </br>';
     $message .= '<a href="'.$url.'">'.$url.'</a></p>';
 
-    $headers = "From: Allied Remittance Finance <info@alliedremittance.com>\r\n";
-    $headers .= "Reply-To: info@alliedremittance.com\r\n";
+    $headers = "From: Allied e <info@allie.com>\r\n";
+    $headers .= "Reply-To: info@allied.com\r\n";
     $headers .= "Content-type: text/html\r\n";
 
     mail($to, $subject, $message, $headers);
